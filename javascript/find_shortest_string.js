@@ -1,9 +1,26 @@
 function findShortestString(arr) {
-  // type your code here
+  // const shortest = arr.reduce((shortestString, curString) =>
+  // curString.length < shortestString.length ? curString : shortestString);
+  // return shortest;
+
+  // establish first string as shortest
+  let shortest = arr[0];
+  // iterate through arr of strings
+  for (i = 0; i < arr.length; i++) {
+    // if current string is shorter than shortest
+    if (arr[i].length < shortest.length) {
+      // current string becomes shortest
+      shortest = arr[i];
+    }
+  }
+  // return shortest
+  return shortest;
 }
 
 if (require.main === module) {
   // add your own tests in here
+
+
   console.log("Expecting: 'a'");
   console.log("=>", findShortestString(['aaa', 'a', 'bb', 'ccc']));
 
